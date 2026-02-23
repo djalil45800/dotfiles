@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Bluetooth Manager
+Exec=ghostty --title=floating_tui -e bluetuith
+Icon=bluetooth
+Type=Application
+Categories=Settings;

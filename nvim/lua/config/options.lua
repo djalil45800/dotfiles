@@ -1,0 +1,27 @@
+local opt = vim.opt
+
+opt.relativenumber = true
+opt.number = true
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = false
+opt.smartindent = true
+opt.undofile = true
+opt.swapfile = false
+opt.backup = false
+opt.hlsearch = false
+opt.incsearch = true
+opt.wrap = false
+opt.termguicolors = true
+opt.scrolloff = 8
+opt.updatetime = 50
+opt.signcolumn = "yes"
+opt.statusline = "%!v:lua.simple_statusline()"
+opt.laststatus = 3
+opt.showmode = false
+opt.showcmd = true
+opt.showcmdloc = "statusline"
+opt.cmdheight = 0
+opt.display = "lastline"
+opt.selection = "inclusive"
+opt.virtualedit = "onemore"

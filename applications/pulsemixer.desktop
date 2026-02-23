@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Volume Control
+Exec=ghostty --title=floating_tui -e pulsemixer
+Icon=audio-card
+Type=Application
+Categories=Audio;

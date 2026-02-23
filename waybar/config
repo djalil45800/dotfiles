@@ -1,0 +1,95 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "idle_inhibitor",
+        "network",
+        "bluetooth",
+        "pulseaudio",
+        "tray",
+        "custom/power"
+    ],
+
+	"sway/workspaces": {
+    	"disable-scroll": true,
+    	"all-outputs": true,
+    	"format": "{name}",
+    	"persistent-workspaces": {
+        	"1:󰋜": [],
+        	"2:": [],
+        	"3:": [],
+        	"4:󰒱": [],
+        	"5:󰕧": []
+		}
+	},
+
+    "sway/mode": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "󰃰  {:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
+        "format-alt": "󰃰  {:%a %d %b}"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰛊",
+            "deactivated": "󰾪"
+        },
+        "tooltip": true
+    },
+
+    "network": {
+        "format-wifi": "󰤨",
+        "format-ethernet": "󰈀",
+        "format-disconnected": "󰤭",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "on-click": ""
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "tooltip-format-connected": "{device_alias}",
+        "on-click": ""
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰖁 Mute",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5"
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 10
+    },
+
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip": false,
+        "on-click": "~/.config/sway/scripts/power-menu.sh"
+    }
+}

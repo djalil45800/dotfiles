@@ -1,0 +1,45 @@
+window {
+  background-color: #1a1b26;
+  color: #a9b1d6;
+  border: 2px solid #3b4261;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14px;
+}
+
+#input {
+  display: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+#inner-box {
+  margin: 12px 8px;
+  background-color: transparent;
+}
+
+#outer-box {
+  margin: 0;
+  background-color: transparent;
+}
+
+#entry {
+  padding: 12px;
+  margin: 4px;
+  transition: all 0.2s ease;
+}
+
+#entry:selected {
+  background-color: rgba(122, 162, 247, 0.2);
+}
+
+#text:selected {
+  color: #7aa2f7;
+  font-weight: bold;
+}
+
+#scroll {
+  margin: 0;
+  padding: 0;
+  border: none;
+}

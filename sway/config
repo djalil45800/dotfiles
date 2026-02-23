@@ -1,0 +1,141 @@
+# Sway configuration file
+
+### Variables
+set $mod Mod4
+set $term ghostty
+set $browser firefox
+set $menu wofi --show drun --allow-images --no-actions
+set $ws1 "1:󰋜"
+set $ws2 "2:"
+set $ws3 "3:"
+set $ws4 "4:󰒱"
+set $ws5 "5:󰕧"
+
+### Font
+font pango:JetBrainsMono Nerd Font 14
+
+### Output configuration
+output DP-1 bg ~/.config/wallpapers/wallpaper.jpeg fill
+output DP-1 mode 1920x1080@165Hz
+
+### Input configuration
+input * {
+    repeat_delay 200
+    repeat_rate 50
+    xkb_layout us
+}
+
+### Key bindings
+# Basics
+bindsym $mod+Return exec $term
+bindsym $mod+Shift+b exec $browser
+bindsym $mod+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaymsg exit
+
+# Focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Workspaces
+assign [app_id="com.mitchellh.ghostty"] $ws2
+for_window [app_id="com.mitchellh.ghostty"] focus
+assign [app_id="firefox"] $ws3
+assign [class="Firefox"] $ws3
+for_window [app_id="firefox"] focus
+assign [app_id="Slack"] $ws4
+for_window [app_id="Slack"] focus
+assign [app_id="com.obsproject.Studio"] $ws5
+for_window [app_id="com.obsproject.Studio"] focus
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+Tab workspace back_and_forth
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+
+# Layout
+bindsym $mod+b splith
+bindsym $mod+v splitv
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+e layout toggle split
+
+# Resize mode
+mode "resize" {
+    bindsym h resize shrink width 10px
+    bindsym j resize grow height 10px
+    bindsym k resize shrink height 10px
+    bindsym l resize grow width 10px
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+### Window config
+#gaps inner 4
+#gaps outer 2
+default_border pixel 1
+default_floating_border pixel 1
+smart_borders on
+smart_gaps on
+for_window [title="^floating_tui$"] {
+    floating enable
+    move position center
+    resize set width 800 px height 500 px
+    border pixel 2
+}
+focus_follows_mouse no
+mouse_warping container
+seat * hide_cursor 2000
+
+### Colorsheme
+client.focused #7aa2f7 #7aa2f7 #1a1b26 #7aa2f7 #7aa2f7
+client.focused_inactive #565f89 #565f89 #a9b1d6 #565f89 #565f89
+client.unfocused #24283b #24283b #565f89 #24283b #24283b
+client.urgent #f7768e #f7768e #1a1b26 #f7768e #f7768e
+
+# Waybar
+bar {
+    swaybar_command waybar
+   ### position top
+}
+
+# Wofi menu
+bindsym $mod+d exec $menu
+
+# Power menu
+bindsym $mod+Shift+d exec ~/.config/sway/scripts/power-menu.sh
+
+# Screeshot
+bindsym $mod+Shift+p exec grim -g "$(slurp)" - | swappy -f -
+bindsym $mod+p exec grim - | wl-copy
+
+# Usb demon
+exec udiskie --tray &

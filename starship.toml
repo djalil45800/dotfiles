@@ -1,0 +1,24 @@
+add_newline = false
+format = "$character$directory$git_branch$custom"
+
+[character]
+success_symbol = "[ ](bold #7aa2f7) "
+error_symbol = "[ ](bold #f7768e) "
+
+[directory]
+style = "bold #7aa2f7"
+truncation_length = 3
+truncate_to_repo = false
+home_symbol = "~"
+format = "[$path]($style) -> "
+
+[git_branch]
+symbol = " "
+style = "bold #9ece6a"
+format = "[$symbol$branch]($style) -> "
+
+[custom.error_msg]
+when = "test $status -ne 0"
+command = "echo $status"
+style = "bold #f7768e"
+format = "[ exit $output]($style)"

@@ -1,0 +1,112 @@
+## --- SYSTEM & CORE ---
+base
+base-devel
+linux
+linux-firmware
+amd-ucode
+grub
+grub-btrfs
+sudo
+paru
+pacman
+zram-generator
+timeshift
+
+## --- TERMINAL & DEV ---
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting
+starship
+neovim
+tmux
+git
+ghostty
+yazi
+eza
+bat
+fd
+ripgrep
+fzf
+zoxide
+jq
+fastfetch
+btop
+ncdu
+tealdeer
+ouch
+lazygit
+lazydocker
+lazysql                # (AUR)
+
+## --- LANGUAGES & RUNTIMES ---
+gcc
+rustup
+go
+bun
+fnm
+python-pip
+python-pynvim
+
+## --- DESKTOP (SWAY) ---
+sway
+swaybg
+swayidle
+swaylock
+waybar
+mako
+wofi
+grim
+slurp
+swappy
+wl-clipboard
+wlr-randr
+polkit
+greetd
+greetd-tuigreet
+
+## --- NETWORKING & BLUETOOTH ---
+networkmanager
+iwd
+bluez
+bluez-utils
+bluetuith
+ufw
+wget
+curl
+rsync
+
+## --- AUDIO & VIDEO ---
+pipewire
+pipewire-alsa
+pipewire-audio
+pipewire-jack
+pipewire-pulse
+wireplumber
+pulsemixer
+playerctl
+mpv
+ffmpeg
+obs-studio
+shotcut
+gimp
+imagemagick
+
+## --- STORAGE & MOUNTING ---
+udisks2
+udiskie
+
+## --- DRIVERS & UTILS ---
+xf86-video-amdgpu
+vulkan-radeon
+lib32-vulkan-radeon
+vulkan-tools
+radeontop
+mesa-utils
+lib32-mesa
+xorg-xwayland
+ttf-jetbrains-mono-nerd
+
+## --- APPS ---
+firefox
+slack-desktop          # (AUR)
+impala                 # (AUR)

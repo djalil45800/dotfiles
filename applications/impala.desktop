@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Wi-Fi Manager
+Exec=ghostty --title=floating_tui -e impala
+Icon=network-wireless
+Type=Application
+Categories=Network;
