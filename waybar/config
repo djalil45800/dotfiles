@@ -22,18 +22,18 @@
         "custom/power"
     ],
 
-	"sway/workspaces": {
-    	"disable-scroll": true,
-    	"all-outputs": true,
-    	"format": "{name}",
-    	"persistent-workspaces": {
-        	"1:󰋜": [],
-        	"2:": [],
-        	"3:": [],
-        	"4:󰒱": [],
-        	"5:󰕧": []
-		}
-	},
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "1:󰋜": [],
+            "2:": [],
+            "3:": [],
+            "4:󰒱": [],
+            "5:󰕧": []
+        }
+    },
 
     "sway/mode": {
         "format": "{}",
@@ -42,7 +42,7 @@
 
     "clock": {
         "format": "󰃰  {:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>",
+        "tooltip-format": "<big>{:%A %d %B %Y}</big>\n<tt>{calendar}</tt>",
         "format-alt": "󰃰  {:%a %d %b}"
     },
 
@@ -52,34 +52,44 @@
             "activated": "󰛊",
             "deactivated": "󰾪"
         },
-        "tooltip": true
+        "tooltip-format": "Idle Inhibitor",
+        "tooltip-format-activated": "Screen will not sleep"
     },
 
     "network": {
-        "format-wifi": "󰤨",
+        "format-wifi": "󰤨 ",
         "format-ethernet": "󰈀",
-        "format-disconnected": "󰤭",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-        "on-click": ""
+        "format-disconnected": "󰤭 ",
+        "tooltip-format-wifi": "󰤨 {essid}\nSignal: {signalStrength}%\nIP: {ipaddr}",
+        "tooltip-format-disconnected": "WiFi Disconnected",
+        "on-click": "gtk-launch impala"
     },
 
     "bluetooth": {
-        "format": "󰂯",
+        "format": "",
         "format-disabled": "󰂲",
-        "format-connected": "󰂱",
-        "tooltip-format-connected": "{device_alias}",
-        "on-click": ""
+        "format-connected": "󰥠  {device_alias}",
+        "tooltip-format": "Bluetooth",
+        "tooltip-format-connected": "󰥠 {device_alias}",
+        "on-click": "gtk-launch bluetuith"
     },
 
     "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰖁 Mute",
+        "format": "{icon}",
+        "format-muted": " ",
         "format-icons": {
-            "default": ["󰕿", "󰖀", "󰕾"]
+            "default": ["", " ", " "],
+            "headphone": " ",
+            "hands-free": "󰖁 ",
+            "portable": "󰕓"
         },
-        "on-click": "pavucontrol",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5"
+        "format-source": "{volume}%",
+        "format-source-muted": "󰝟 ",
+        "tooltip-format": "Output: {volume}%\nInput: {format_source}",
+        "tooltip-format-muted": "Output: Muted\nInput: {format_source}",
+        "on-click": "gtk-launch pulsemixer",
+        "on-scroll-up": "pulsemixer --volume +5",
+        "on-scroll-down": "pulsemixer --volume -5"
     },
 
     "tray": {

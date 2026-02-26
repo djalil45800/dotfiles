@@ -56,11 +56,11 @@ window#waybar {
   transition: all 0.2s ease;
 }
 
+#clock:hover,
 #idle_inhibitor:hover,
 #network:hover,
 #bluetooth:hover,
-#pulseaudio:hover,
-#clock:hover {
+#pulseaudio:hover {
   background-color: rgba(122, 162, 247, 0.1);
   color: #c0caf5;
 }
