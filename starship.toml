@@ -6,12 +6,12 @@ style = "bold #7aa2f7"
 truncation_length = 3
 truncate_to_repo = false
 home_symbol = "~"
-format = "[$path]($style) -> "
+format = "[$path]($style) => "
 
 [git_branch]
 symbol = " "
 style = "bold #9ece6a"
-format = "[$symbol$branch]($style) -> "
+format = "[$symbol$branch]($style) => "
 
 [custom.error_msg]
 when = "test $status -ne 0"
