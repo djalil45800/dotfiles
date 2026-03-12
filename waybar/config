@@ -58,7 +58,7 @@
 
     "network": {
         "format-wifi": "󰤨 ",
-        "format-ethernet": "󰈀",
+        "format-ethernet": " ",
         "format-disconnected": "󰤭 ",
         "tooltip-format-wifi": "󰤨 {essid}\nSignal: {signalStrength}%\nIP: {ipaddr}",
         "tooltip-format-disconnected": "WiFi Disconnected",
@@ -68,7 +68,7 @@
     "bluetooth": {
         "format": "",
         "format-disabled": "󰂲",
-        "format-connected": "󰥠  {device_alias}",
+        "format-connected": "󰥠 ",
         "tooltip-format": "Bluetooth",
         "tooltip-format-connected": "󰥠 {device_alias}",
         "on-click": "gtk-launch bluetuith"

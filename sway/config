@@ -59,6 +59,10 @@ for_window [app_id="Slack"] focus
 assign [app_id="com.obsproject.Studio"] $ws5
 for_window [app_id="com.obsproject.Studio"] focus
 
+#Games
+assign [class="Ankama Launcher"] $ws1
+for_window [app_id="Ankama Launcher"] focus
+
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
