@@ -56,6 +56,8 @@ assign [class="Firefox"] $ws3
 for_window [app_id="firefox"] focus
 assign [app_id="Slack"] $ws4
 for_window [app_id="Slack"] focus
+assign [app_id="vesktop"] $ws4
+for_window [app_id="vesktop"] focus
 assign [app_id="com.obsproject.Studio"] $ws5
 for_window [app_id="com.obsproject.Studio"] focus
 
@@ -153,3 +155,6 @@ exec_always {
     gsettings set $gnome-schema icon-theme 'Tokyonight-Moon'
     gsettings set $gnome-schema font-name 'JetBrainsMono Nerd Font Light 12'
 }
+
+# Streaming
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
